@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/pink/__init__.py
+src/pink/hw5.py
+src/pink_pkg_aysu_ale.egg-info/PKG-INFO
+src/pink_pkg_aysu_ale.egg-info/SOURCES.txt
+src/pink_pkg_aysu_ale.egg-info/dependency_links.txt
+src/pink_pkg_aysu_ale.egg-info/top_level.txt
