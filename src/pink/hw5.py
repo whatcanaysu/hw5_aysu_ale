@@ -75,6 +75,12 @@
 #  "Hakuna matata", "Timon, Pumba and Simba are friends, but Simba could eat the other two."] 
 #
 
+def count_simba(text_list):
+    return len(list(filter(lambda x: "Simba" in x, text_list)))
+
+# example = ["Simba and Nala are lions.", "I laugh in the face of danger.", "Hakuna matata", "Timon, Pumba and Simba are friends, but Simba could eat the other two."]
+# count_simba(example)
+
 # 7)
 # Create a function called "get_day_month_year" that takes 
 # a list of datetimes.date and returns a pandas dataframe
@@ -82,7 +88,16 @@
 # is an element of the input list and has as value its 
 # day, month, and year.
 # 
+import pandas as pd
+import numpy as np
 
+def get_day_month_year(date_list):
+    return pd.DataFrame(np.array(list(map(lambda x: x.split("-"), date_list))), 
+                        columns = ["year", "month", "day"])
+
+# example = ["2021-11-12", "2018-12-05", "2017-02-17", "2021-11-06", "2019-03-27"]
+# get_day_month_year(example)
+    
 # 8) 
 # Create a function called "compute_distance" that takes
 # a list of tuple pairs with latitude and longitude coordinates and 
@@ -90,6 +105,13 @@
 # example input: [((41.23,23.5), (41.5, 23.4)), ((52.38, 20.1),(52.3, 17.8))]
 # HINT: You can use geopy.distance in order to compute the distance
 #
+
+from geopy import distance
+def compute_distance(latlong_tupple):
+    return [distance.distance(x[0],x[1]).km for x in latlong_tupple]
+
+# example = [((41.23,23.5), (41.5, 23.4)), ((52.38, 20.1),(52.3, 17.8))]
+# compute_distance(example)
 
 #################################################
 # 9)
@@ -103,4 +125,14 @@
 # the result should be 13
 #
 
+def sum_general_int_list(int_list):
+    acusum = 0
+    for x in int_list:
+        if type(x) is not list:
+            acusum += x
+        else:
+            acusum += sum_general_int_list(x)
+    return acusum
 
+# example = [[2], 4, 5, [1, [2], [3, 5, [7,8]], 10], 1]
+# sum_general_int_list(example)
