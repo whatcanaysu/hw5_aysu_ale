@@ -7,13 +7,10 @@ Author: Aysu Demir, Alexandra Malaga
 Author-email: aysu.demir@bse.edu, alexandra.malaga@bse.edu
 License: UNKNOWN
 Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Description: # hw5_aysu_ale
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
-License-File: LICENSE.txt
-
-# hw5_aysu_ale
-

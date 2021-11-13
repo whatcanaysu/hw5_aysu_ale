@@ -1,4 +1,3 @@
-2+2
 # 1)
 # Create a function called "car_at_light"
 # It should take one parameter: "light"
