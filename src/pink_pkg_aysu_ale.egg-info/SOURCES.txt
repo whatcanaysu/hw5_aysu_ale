@@ -4,6 +4,8 @@ pyproject.toml
 setup.cfg
 setup.py
 src/pink/__init__.py
+src/pink/clean.py
+src/pink/estimate.py
 src/pink/hw5.py
 src/pink_pkg_aysu_ale.egg-info/PKG-INFO
 src/pink_pkg_aysu_ale.egg-info/SOURCES.txt

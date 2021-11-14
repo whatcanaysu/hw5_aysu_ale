@@ -1,3 +1,7 @@
+import pandas as pd
+import numpy as np
+from geopy import distance
+
 # 1)
 # Create a function called "car_at_light"
 # It should take one parameter: "light"
@@ -50,13 +54,12 @@ def safe_subtract(val1: int,val2: int):
 # Name the first function "retrieve_age_eafp" and follow EAFP
 # Name the second function "retrieve_age_lbyl" and follow lbyl
 
-dic1 =dict({'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'})
-dic2 =dict({'name': 'John', 'last_name': 'Doe', 'birth': 1987})
     
 def retrieve_age_lbyl(person):
     if 'name' in person and 'birth' in person:
-        age = 2021-person['birth']
+        age = 2021 - person['birth']
         print(person['name']+" is "+str(age)+" years old")
+        return age
         #print("{name} is a {age} year old.".format(**person),age= 2021-person['birth'])
     else:
         print("Some keys are missing")
@@ -66,14 +69,16 @@ def retrieve_age_eafp(person):
     try:
         age = 2021-person['birth']
         print(person['name']+" is "+str(age)+" years old")
+        return age
     except KeyError:
         print("Some keys are missing")
     
-
-retrieve_age_lbyl(dic1)
-retrieve_age_eafp(dic1)
-retrieve_age_lbyl(dic2)
-retrieve_age_eafp(dic2)
+# dic1 =dict({'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'})
+# dic2 =dict({'name': 'John', 'last_name': 'Doe', 'birth': 1987})
+# retrieve_age_lbyl(dic1)
+# retrieve_age_eafp(dic1)
+# retrieve_age_lbyl(dic2)
+# retrieve_age_eafp(dic2)
 
 
 # 4)
@@ -83,41 +88,52 @@ retrieve_age_eafp(dic2)
 # that it might not exist. 
 #
 
+# def read_data(file_name):
+#     try:
+#         open(file_name, "r")
+#         return 1
+#     except IOError:
+#         print ("Error: File does not appear to exist.")
+#         return 0
+
 def read_data(file_name):
     try:
-        open(file_name, "r")
-        return 1
+        return pd.read_csv(file_name)
     except IOError:
         print ("Error: File does not appear to exist.")
-        return 0
 
-result = read_data("testfile")
-print(result)
+# read_data("testfile")
+# print(result)
 
 # 5) Squash some bugs! 
 # Find the possible logical errors (bugs) 
 # in the code blocks below. Comment in each of them
 # which logical errors did you find and correct them
+
 ### (a)
-# total_double_sum = 0
-# for elem in [10, 5, 2]:
-#     double = elem * 2
-#     total_double_sum += elem
+total_double_sum = 0
+for elem in [10, 5, 2]:
+    double = elem * 2
+    total_double_sum += double # it should add double of elem
+    #total_double_sum += elem
 
-# ### (b)
-# strings = ''
-# for string in ['I', 'am', 'Groot']:
-#     strings = string+"_"+string
+### (b)
+strings = ''
+for string in ['I', 'am', 'Groot']:
+    strings = strings+"_"+string # it should refer to the cummulative variable
+    # strings = string+"_"+string
 
-# ### (c) Careful!
-# j=10
-# while j > 0:
-#    j += 1
+### (c) Careful!
+j=10
+while j > 0:
+    j -= 1 # if j increases, the while condition will never be false and stop the loop
+    # j += 1
 
-# ### (d)
-# productory = 0
-# for elem in [1, 5, 25]:
-#     productory *= elem
+### (d)
+# productory = 0 # it is a product, if it starts as 0, it will always be 0
+productory = 1
+for elem in [1, 5, 25]:
+    productory *= elem
 
 
 ################################################
@@ -143,8 +159,6 @@ def count_simba(text_list):
 # is an element of the input list and has as value its 
 # day, month, and year.
 # 
-import pandas as pd
-import numpy as np
 
 def get_day_month_year(date_list):
     return pd.DataFrame(np.array(list(map(lambda x: x.split("-"), date_list))), 
@@ -161,9 +175,8 @@ def get_day_month_year(date_list):
 # HINT: You can use geopy.distance in order to compute the distance
 #
 
-from geopy import distance
 def compute_distance(latlong_tupple):
-    return [distance.distance(x[0],x[1]).km for x in latlong_tupple]
+    return list(map(lambda x: distance.distance(x[0],x[1]).km, latlong_tupple))
 
 # example = [((41.23,23.5), (41.5, 23.4)), ((52.38, 20.1),(52.3, 17.8))]
 # compute_distance(example)
