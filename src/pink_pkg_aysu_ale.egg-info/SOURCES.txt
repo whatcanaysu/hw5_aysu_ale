@@ -12,3 +12,4 @@ src/pink_pkg_aysu_ale.egg-info/SOURCES.txt
 src/pink_pkg_aysu_ale.egg-info/dependency_links.txt
 src/pink_pkg_aysu_ale.egg-info/requires.txt
 src/pink_pkg_aysu_ale.egg-info/top_level.txt
+test/test_hw5.py
