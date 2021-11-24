@@ -18,16 +18,15 @@ from geopy import distance
 
 def car_at_light(light):
     try:
-        
         if light == 'red':
             message = 'stop'
         elif light == 'green':
             message = 'go'
         elif light == 'yellow':
             message = 'wait'
-        return print(message)
+        return message
     except UnboundLocalError:
-        print ("Undefined instruction for color: ",light)
+        return "Undefined instruction for color: " + light
 
 # 2)
 # Create a function named "safe_subtract" that
@@ -43,7 +42,7 @@ def safe_subtract(val1: int,val2: int):
         result = val2 - val1
         return result
     except TypeError: 
-        print('None')
+        return 'None'
 
 # 3)
 # Imagine you have a dictionary with the attributes of a person
@@ -58,20 +57,17 @@ def safe_subtract(val1: int,val2: int):
 def retrieve_age_lbyl(person):
     if 'name' in person and 'birth' in person:
         age = 2021 - person['birth']
-        print(person['name']+" is "+str(age)+" years old")
-        return age
-        #print("{name} is a {age} year old.".format(**person),age= 2021-person['birth'])
+        return person['name'] + " is " + str(age) + " years old"
     else:
-        print("Some keys are missing")
+        return "Some keys are missing"
 
 
 def retrieve_age_eafp(person):
     try:
         age = 2021-person['birth']
-        print(person['name']+" is "+str(age)+" years old")
-        return age
+        return person['name'] + " is " + str(age) + " years old"
     except KeyError:
-        print("Some keys are missing")
+        return "Some keys are missing"
     
 # dic1 =dict({'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'})
 # dic2 =dict({'name': 'John', 'last_name': 'Doe', 'birth': 1987})
@@ -79,7 +75,6 @@ def retrieve_age_eafp(person):
 # retrieve_age_eafp(dic1)
 # retrieve_age_lbyl(dic2)
 # retrieve_age_eafp(dic2)
-
 
 # 4)
 # Imagine you have a file named data.csv. 
@@ -100,7 +95,7 @@ def read_data(file_name):
     try:
         return pd.read_csv(file_name)
     except IOError:
-        print ("Error: File does not appear to exist.")
+        return "Error: File does not appear to exist."
 
 # read_data("testfile")
 # print(result)
