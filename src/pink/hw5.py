@@ -76,7 +76,6 @@ def retrieve_age_eafp(person):
 # retrieve_age_lbyl(dic2)
 # retrieve_age_eafp(dic2)
 
-!
 # 4)
 # Imagine you have a file named data.csv. 
 # Create a function called "read_data" that reads the file

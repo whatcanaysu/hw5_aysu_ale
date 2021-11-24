@@ -1,5 +1,6 @@
 # I changed all print() in hw5 to return to be able to do output == expected_output
 # I don't know how to test read_data when the data exists
+# pytest --cov=hw5 --cov-fail-under 80
 
 # 1. car_at_light
 from pink.hw5 import car_at_light
@@ -85,7 +86,6 @@ def test_read_data_miss():
     output = read_data(x)
     expected_output = 'Error: File does not appear to exist.'
     assert output == expected_output
-
 
 # 5. count_simba
 
