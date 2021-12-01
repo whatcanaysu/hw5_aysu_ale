@@ -98,14 +98,14 @@ def test_count_simba():
     assert output == expected_output
 
 #aysu
-# from pink.hw5 import get_day_month_year
-# import pandas as pd
-# def test_get_day_month_year():
-#     df = ["2021-11-12", "2018-12-25", "2017-11-16", "2019-10-27"]
-#     output=get_day_month_year(df)
-#     data = {'year':[2021,2018,2017,2019],'month':[11,12,11,10],'day':[12,25,16,27]}
-#     expected_output = pd.DataFrame(data)
-#     assert output == expected_output
+from pink.hw5 import get_day_month_year
+import pandas as pd
+def test_get_day_month_year():
+    df = ["2021-11-12"]
+    output=get_day_month_year(df)
+    data = {'year':["4545"],'month':["11"],'day':["12"]}
+    expected_output = pd.DataFrame(data)
+    assert output == expected_output
     
     
 from pink.hw5 import compute_distance
