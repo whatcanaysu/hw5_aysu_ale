@@ -1,7 +1,3 @@
-# I changed all print() in hw5 to return to be able to do output == expected_output
-# I don't know how to test read_data when the data exists
-# pytest --cov=hw5 --cov-fail-under 80
-
 # 1. car_at_light
 from pink.hw5 import car_at_light
 
@@ -121,7 +117,7 @@ def test_compute_distance():
     expected_output = [31.13186522205169,157.005827868894]
     assert output == expected_output
 
-# 8. sum_general_int_list
+# 9. sum_general_int_list
     
 from pink.hw5 import sum_general_int_list
 
@@ -130,3 +126,19 @@ def test_sum_general_int_list():
     output = sum_general_int_list(example)
     expected_output =48
     assert output == expected_output
+    
+# (hw5) C:\Users\Ale Málaga OSIPTEL\hw5_aysu_ale>pytest --cov=test --cov-report=xml --cov-fail-under 80
+# ==================================================================== test session starts ====================================================================
+# platform win32 -- Python 3.8.12, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
+# rootdir: C:\Users\Ale Málaga OSIPTEL\hw5_aysu_ale
+# plugins: cov-3.0.0
+# collected 15 items
+
+# test\test_hw5.py ...............                                                                                                                       [100%]
+
+# ---------- coverage: platform win32, python 3.8.12-final-0 -----------
+# Coverage XML written to file coverage.xml
+
+# Required test coverage of 80% reached. Total coverage: 100.00%
+
+# ==================================================================== 15 passed in 2.63s =====================================================================
