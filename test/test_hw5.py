@@ -97,3 +97,29 @@ def test_count_simba():
     expected_output = 2
     assert output == expected_output
 
+#aysu
+from pink.hw5 import get_day_month_year
+import pandas as pd
+def test_get_day_month_year():
+    df = ["2021-11-12"]
+    output=get_day_month_year(df)
+    data = {'year':["4545"],'month':["11"],'day':["12"]}
+    expected_output = pd.DataFrame(data)
+    assert output == expected_output
+    
+    
+from pink.hw5 import compute_distance
+
+def test_compute_distance():
+    example = [((41.23,23.5), (41.5, 23.4)), ((52.38, 20.1),(52.3, 17.8))]
+    output = compute_distance(example)
+    expected_output = [31.13186522205169,157.005827868894]
+    assert output == expected_output
+    
+from pink.hw5 import sum_general_int_list
+
+def test_sum_general_int_list():
+    example = [[2], 4, 5, [1, [2], [3, 5, [7,8]], 10], 1]
+    output = sum_general_int_list(example)
+    expected_output =48
+    assert output == expected_output
