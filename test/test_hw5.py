@@ -87,7 +87,7 @@ def test_read_data_miss():
     expected_output = 'Error: File does not appear to exist.'
     assert output == expected_output
 
-# 5. count_simba
+# 6. count_simba
 
 from pink.hw5 import count_simba
 
@@ -97,17 +97,22 @@ def test_count_simba():
     expected_output = 2
     assert output == expected_output
 
-#aysu
+# 7. get_day_month_year
+
 from pink.hw5 import get_day_month_year
 import pandas as pd
+from pandas.testing import assert_frame_equal
+
 def test_get_day_month_year():
-    df = ["2021-11-12"]
-    output=get_day_month_year(df)
-    data = {'year':["4545"],'month':["11"],'day':["12"]}
-    expected_output = pd.DataFrame(data)
-    assert output == expected_output
-    
-    
+    x = ["2021-11-12", "2018-12-25", "2017-11-16", "2019-10-27"]
+    output=get_day_month_year(x)
+    expected_output = pd.DataFrame({'year': ['2021', '2018', '2017', '2019'],
+                                    'month': ['11', '12', '11', '10'],
+                                    'day': ['12','25','16','27']})
+    assert_frame_equal(output, expected_output)
+
+# 8. compute_distance
+
 from pink.hw5 import compute_distance
 
 def test_compute_distance():
@@ -115,6 +120,8 @@ def test_compute_distance():
     output = compute_distance(example)
     expected_output = [31.13186522205169,157.005827868894]
     assert output == expected_output
+
+# 8. sum_general_int_list
     
 from pink.hw5 import sum_general_int_list
 
