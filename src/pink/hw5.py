@@ -26,7 +26,8 @@ def car_at_light(light):
             message = 'wait'
         return message
     except UnboundLocalError:
-        return "Undefined instruction for color: " + light
+        print("Undefined instruction for color: " + light)
+        raise
 
 # 2)
 # Create a function named "safe_subtract" that

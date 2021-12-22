@@ -19,11 +19,12 @@ def test_car_at_light_yellow():
     expected_output = "wait"
     assert output == expected_output
 
+import pytest
+
 def test_car_at_light_black():
-    x = "black"
-    output = car_at_light(x)
-    expected_output = "Undefined instruction for color: "+ x
-    assert output == expected_output
+     x = "black"
+     with pytest.raises(Exception):
+          car_at_light(x)
 
 # 2. safe_subtract
 
