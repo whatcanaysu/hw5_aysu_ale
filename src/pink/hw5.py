@@ -17,17 +17,37 @@ from geopy import distance
 #
 
 def car_at_light(light):
-    try:
-        if light == 'red':
-            message = 'stop'
-        elif light == 'green':
-            message = 'go'
-        elif light == 'yellow':
-            message = 'wait'
-        return message
-    except UnboundLocalError:
-        print("Undefined instruction for color: " + light)
-        raise
+    if light == "red":
+        return "stop"
+    elif light == "green":
+        return "go"
+    elif light == "yellow":
+        return "wait"
+    else:
+        raise ValueError("Undefined instruction for color:", light)
+
+# def car_at_light(light):
+#     if light == 'red':
+#         return 'stop'
+#     elif light == 'green':
+#         return 'go'
+#     elif light == 'yellow':
+#         return 'wait'
+#     else:
+#         raise Exception("Undefined instruction for color:", light)
+
+# def car_at_light(light):
+#     try:
+#         if light == 'red':
+#             message = 'stop'
+#         elif light == 'green':
+#             message = 'go'
+#         elif light == 'yellow':
+#             message = 'wait'
+#         return message
+#     except UnboundLocalError:
+#         print("Undefined instruction for color: " + light)
+#         raise
 
 # 2)
 # Create a function named "safe_subtract" that
